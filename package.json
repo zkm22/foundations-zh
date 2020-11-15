@@ -1,0 +1,33 @@
+{
+  "name": "@leetcode-hire/foundations-zh",
+  "version": "1.0.0",
+  "description": "Frontend foundation problem for leetcode-cn.com",
+  "main": "lib/index.js",
+  "repository": "https://github.com/LeetCode-OpenSource/hire",
+  "author": "lynweklm@gmail.com",
+  "license": "MIT",
+  "scripts": {
+    "build": "shx rm -rf lib && tsc -p tsconfig.json --outDir lib",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.12.1",
+    "shx": "^0.3.2",
+    "typescript": "^3.6.2"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.12.1",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@types/jest": "^26.0.15",
+    "husky": "^4.3.0",
+    "jest": "^26.6.3",
+    "tslib": "^1.10.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test",
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+    }
+  }
+}
